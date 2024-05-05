@@ -90,7 +90,9 @@ function handleClick(event) {
   event.preventDefault();
   const target = event.target;
   largeImg = target.dataset.source;
-
+  if (target.nodeName !== "IMG") {
+    return;
+  }
   const instance = basicLightbox.create(`
 	<div class = "modal">
   <img src ="${largeImg}">
